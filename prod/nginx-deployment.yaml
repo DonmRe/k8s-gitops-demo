@@ -6,11 +6,11 @@ spec:
   replicas: 4
   selector:
     matchLabels:
-      app: nginx-demo
+      app: nginx-demo-prod
   template:
     metadata:
       labels:
-        app: nginx-demo
+        app: nginx-demo-prod
     spec:
       containers:
         - name: nginx
@@ -21,10 +21,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: nginx-demo-service
+  name: nginx-demo-prod-service
 spec:
   selector:
-    app: nginx-demo
+    app: nginx-demo-prod
   ports:
     - port: 80
       targetPort: 80
